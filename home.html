@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navegação Lúmina</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Home - Lúmina</title>
+  <link rel="stylesheet" href="./assets/home.css" />
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&family=Kokoro&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./assets/img/icon.png" type="image/x-icon">
+  
 </head>
 <body>
   <nav>
-    <div class="logo-nav">Lúmina</div>
+    <div class="logo-nav"><a href="home.html">Lúmina</a></div>
     <ul>
         <li><a href="home.html">Home</a></li>
         <li>
@@ -30,28 +32,84 @@
     FRETE GRÁTIS para todo o Brasil | Parcele em até 6x
   </div>
   <main>
-    <div class="banner">
-        <img src="./assets/img/banner1.png" alt="Banner principal">
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <img src="./assets/img/banner1.png" alt="Imagem 1">
       </div>
+      <div class="carousel-slide">
+        <img src="./assets/img/banner2.png" alt="Imagem 2">
+      </div>
+      <div class="carousel-slide">
+        <img src="./assets/img/banner3.png" alt="Imagem 3">
+      </div>
+      <div class="carousel-slide">
+        <img src="./assets/img/banner4.png" alt="Imagem 4">
+      </div>
+    </div>
+    
       <div class="categorias">
-        <div class="categoria"></div>
-        <div class="categoria"></div>
-        <div class="categoria"></div>
-        <div class="categoria"></div>
-        <div class="categoria"></div>
-        <div class="categoria"></div>
+        <a href="bolsas.html" class="categoria">
+          <img src="./assets/img/img categorias/bolsas.jpg" alt="bolsas" class="img-categoria">
+          <span class="nome-categoria">Bolsas</span>
+        </a>
+        
+        <a href="colares.html" class="categoria">
+          <img src="./assets/img/img categorias/colar.jpg" alt="colares" class="img-categoria">
+          <span class="nome-categoria">Colares</span>
+        </a>
+      
+        <a href="pulseiras.html" class="categoria">
+          <img src="./assets/img/img categorias/pulseira.jpg" alt="pulseiras" class="img-categoria">
+          <span class="nome-categoria">Pulseiras</span>
+        </a>
+      
+        <a href="brincos.html" class="categoria">
+          <img src="./assets/img/img categorias/brinco.jpg" alt="brincos" class="img-categoria">
+          <span class="nome-categoria">Brincos</span>
+        </a>
+      
+        <a href="echarpes.html" class="categoria">
+          <img src="./assets/img/img categorias/cachecol.jpg" alt="Echarpes" class="img-categoria">
+          <span class="nome-categoria">Echarpes</span>
+        </a>
+      
+        <a href="cintos.html" class="categoria">
+          <img src="./assets/img/img categorias/cinto.jpg" alt="cintos" class="img-categoria">
+          <span class="nome-categoria">Cintos</span>
+        </a>
       </div>
+      
   </main>
   <footer class="footer">
     <div class="footer-left">
-      <a href="#"><img src="./assets/img/whatsapp.svg" alt="WhatsApp"></a>
-      <a href="#"><img src="./assets/img/facebook.svg" alt="Facebook"></a>
-      <a href="#"><img src="./assets/img/insta.svg" alt="Instagram"></a>
+      <a href="https://wa.me/5511999000000?text=Ol%C3%A1" target="_blank"><img src="./assets/img/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><img src="./assets/img/facebook.svg" alt="Facebook"></a>
+      <a href="https://www.instagram.com/matheusharuki__/" target="_blank"><img src="./assets/img/insta.svg" alt="Instagram"></a>
     </div>
     <div class="footer-right">
       <span class="logo-footer">Lúmina</span>
     </div>
   </footer>
-  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const totalSlides = slides.length;
+      let currentSlide = 0;
+      
+      // Mostra o primeiro slide
+      slides[currentSlide].classList.add('active');
+      
+      // Função para avançar slides automaticamente
+      function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % totalSlides;
+        slides[currentSlide].classList.add('active');
+      }
+      
+      // Inicia a transição automática (muda a cada 5 segundos)
+      setInterval(nextSlide, 3000);
+    });
+    </script>
 </body>
 </html>

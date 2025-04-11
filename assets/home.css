@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
+
+@font-face {
+  font-family: 'PT Sans';
+  src: url('fonts/PTSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* NAVBAR */
+nav {
+  height: 90px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-nav {
+  position: absolute;
+  left: 60px;
+  font-family: 'Josefin Slab', serif;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.logo-nav a{
+  text-decoration: none;
+  color: inherit;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  width: 160px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+}
+
+nav ul li:hover {
+  transition: 0.5s;
+  background-color: #F2EBE4;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 50%;
+}
+
+/* SUBMENU */
+nav ul li ul {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+  width: 200px;
+  height: 265px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+nav ul li ul li {
+  height: 44px;
+  width: 100%;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+
+nav ul li ul li:last-child {
+  border-bottom: none;
+}
+
+nav ul li ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.3s;
+}
+
+nav ul li ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+nav ul li:hover ul {
+  display: flex;
+}
+
+/* INFO BAR */
+.info-bar {
+  height: 50px;
+  background-color: #DEC090;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* CARROSSEL */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 925px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* JavaScript irá adicionar esta classe para o slide ativo */
+.carousel-slide.active {
+  opacity: 1;
+}
+
+
+/* CATEGORIAS */
+.categorias {
+  /*height: 1025px;*/
+  background-color: #F2EBE4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 55px;
+  width: 100vw;
+  padding: 55px;
+}
+
+.categoria {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.categoria:hover {
+  transform: scale(1.02);
+}
+
+.img-categoria {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nome-categoria {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Josefin Slab', serif;
+  color: white;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  pointer-events: none;
+}
+
+/* FOOTER */
+.footer {
+  height: 100px;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  position: relative;
+}
+
+.footer-left,
+.footer-right {
+  position: absolute;
+  bottom: 10px;
+}
+
+.footer-left {
+  left: 40px;
+}
+
+.footer-right {
+  right: 40px;
+}
+
+.footer-left a img {
+  margin-right: 5px;
+  transition: transform 0.3s ease;
+}
+
+.footer-left a img:hover {
+  transform: scale(1.1);
+}
+
+.logo-footer {
+  font-family: 'Josefin Slab', serif;
+  font-weight: 600;
+  font-size: 25px;
+}
