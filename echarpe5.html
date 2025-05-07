@@ -12,20 +12,20 @@
   <nav>
     <div class="logo-nav"><a href="home.html">Lúmina</a></div>
     <ul>
-      <li><a href="home.html">Home</a></li>
-      <li class="with-submenu">
-        <a href="#">Acessórios &#9662;</a>
-        <ul class="submenu">
-          <li><a href="bolsas.html">Bolsas</a></li>
-          <li><a href="brincos.html">Brincos</a></li>
-          <li><a href="colares.html">Colares</a></li>
-          <li><a href="echarpes.html">Echarpes</a></li>
-          <li><a href="pulseiras.html">Pulseiras</a></li>
-          <li><a href="cintos.html">Cintos</a></li>
-        </ul>
-      </li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>      
+        <li><a href="home.html">Home</a></li>
+        <li>
+          <a href="#">Acessórios &#9662;</a>
+          <ul>
+            <li><a href="bolsas.html">Bolsas</a></li>
+            <li><a href="brincos.html">Brincos</a></li>
+            <li><a href="colares.html">Colares</a></li>
+            <li><a href="echarpes.html">Echarpes</a></li>
+            <li><a href="pulseiras.html">Pulseiras</a></li>
+            <li><a href="cintos.html">Cintos</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>      
   </nav>
 
   <div class="carrossel-container">
@@ -96,5 +96,45 @@
       <span class="logo-footer">Lúmina</span>
     </div>
   </footer>
+  <div id="acessibilidade-menu">
+    <button id="aumentarFonte"><img src="assets/img/a_mais.png" alt="Aumentar fonte"></button>
+    <button id="diminuirFonte"><img src="assets/img/a_menos.png" alt="Diminuir fonte"></button>
+    <button id="contraste"><img src="assets/img/alto_contraste.png" alt="Alto contraste"></button>
+  </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+        </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let tamanhoFonte = 100;
+  
+      const ajustarFonte = (valor) => {
+        tamanhoFonte += valor;
+        if (tamanhoFonte < 70) tamanhoFonte = 70;
+        if (tamanhoFonte > 150) tamanhoFonte = 150;
+        document.documentElement.style.fontSize = tamanhoFonte + '%'; // <- AQUI É A MUDANÇA
+      };
+  
+      document.getElementById('aumentarFonte').addEventListener('click', () => ajustarFonte(10));
+      document.getElementById('diminuirFonte').addEventListener('click', () => ajustarFonte(-10));
+  
+      document.getElementById('contraste').addEventListener('click', () => {
+        document.body.classList.toggle('alto-contraste');
+      });
+    });
+  </script>
+  
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 </body>
 </html>

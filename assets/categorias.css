@@ -38,7 +38,7 @@ nav {
   left: 60px;
   font-family: 'Josefin Slab', serif;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 2.25em;
 }
 
 .logo-nav a{
@@ -58,7 +58,7 @@ nav ul li {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 1.375em;
   cursor: pointer;
   position: relative;
 }
@@ -106,7 +106,7 @@ nav ul li:hover ul {
 
 nav ul li ul li {
   height: 44px;
-  font-size: 17px;
+  font-size: 0.8em;
   border-bottom: 1px solid #ddd;
 }
 
@@ -138,7 +138,7 @@ nav ul li ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 1.125em;
   letter-spacing: 0.5px;
 }
 
@@ -235,5 +235,44 @@ nav ul li ul li a:hover {
 .logo-footer {
   font-family: 'Josefin Slab', serif;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 1.563em;
+}
+
+/* ACESSIBILIDADE */
+#acessibilidade-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#acessibilidade-menu button {
+  width: 32px;
+  height: 32px;
+  padding: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#acessibilidade-menu button img {
+  width: 24px;
+  height: 24px;
+}
+
+.alto-contraste {
+  background-color: black !important;
+  color: yellow !important;
+}
+
+.alto-contraste img {
+  filter: invert(1);
 }

@@ -13,9 +13,14 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%; /* base: 16px */
+}
+
 body {
   font-family: 'PT Sans', sans-serif;
   background-color: #F2EBE4;
+  font-size: 1em;
 }
 
 /* NAVBAR */
@@ -34,10 +39,10 @@ nav {
   left: 60px;
   font-family: 'Josefin Slab', serif;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 2.25em; /* 36px */
 }
 
-.logo-nav a{
+.logo-nav a {
   text-decoration: none;
   color: inherit;
 }
@@ -54,7 +59,7 @@ nav ul li {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 1.375em; /* 22px */
   cursor: pointer;
   position: relative;
 }
@@ -99,7 +104,7 @@ nav ul li ul {
 nav ul li ul li {
   height: 44px;
   width: 100%;
-  font-size: 17px;
+  font-size: 0.8em; /* 17px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,13 +116,13 @@ nav ul li ul li:last-child {
 }
 
 nav ul li ul li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
   text-decoration: none;
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.3s;
 }
 
@@ -137,7 +142,7 @@ nav ul li:hover ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 1.125em; /* 18px */
   letter-spacing: 0.5px;
 }
 
@@ -164,15 +169,12 @@ nav ul li:hover ul {
   display: block;
 }
 
-/* JavaScript irá adicionar esta classe para o slide ativo */
 .carousel-slide.active {
   opacity: 1;
 }
 
-
 /* CATEGORIAS */
 .categorias {
-  /*height: 1025px;*/
   background-color: #F2EBE4;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -210,19 +212,18 @@ nav ul li:hover ul {
   transform: translate(-50%, -50%);
   font-family: 'Josefin Slab', serif;
   color: white;
-  font-size: 24px;
+  font-size: 1.5em; /* 24px */
   text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
   pointer-events: none;
 }
 
-/*BLOG*/
+/* BLOG */
 .blog {
   background-color: #F2EBE4;
   margin: 5%;
 }
 
-
-.blog-title{
+.blog-title {
   display: flex;
   flex-direction: row;
   font-family: 'PT Sans', sans-serif;
@@ -230,30 +231,28 @@ nav ul li:hover ul {
 }
 
 .blog-title .title {
-  font-size: 29px;
+  font-size: 1.813em; /* 29px */
   align-self: center;
 }
 
 .blog-title .subtitle {
   margin-left: 15px;
   align-self: center;
-  font-size: 19px;
+  font-size: 1.188em; /* 19px */
 }
 
-.bloco {
+.bloco,
+.bloco-reverso {
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   align-items: center;
   gap: 50px;
   margin-bottom: 55px;
 }
 
 .bloco-reverso {
-  display: flex;
-  flex-direction: row-reverse;  
-  align-items: center;
+  flex-direction: row-reverse;
   gap: 20px;
-  margin-bottom: 55px;
 }
 
 .texto {
@@ -264,42 +263,42 @@ nav ul li:hover ul {
 }
 
 .texto h3 {
-  font-size: 25px;
+  font-size: 1.563em; /* 25px */
   margin-bottom: 25px;
 }
 
 .texto p {
-  font-size: 23px;
+  font-size: 1.438em; /* 23px */
   line-height: 1.6;
   text-align: justify;
 }
 
+/* Imagens blog */
 .primeira-img {
   width: 380px;
-  height: auto;
   margin-top: 50px;
+}
+
+.segunda-img,
+.quarta-img,
+.sexta-img {
+  margin-left: 50px;
 }
 
 .segunda-img {
   width: 500px;
-  height: auto;
-  margin-left: 50px;
 }
 
 .terceira-img {
   width: 450px;
-  height: auto;
 }
 
 .quarta-img {
   width: 450px;
-  height: auto;
-  margin-left: 50px;
 }
 
 .sexta-img {
   width: 430px;
-  margin-left: 50px;
 }
 
 /* FOOTER */
@@ -336,5 +335,51 @@ nav ul li:hover ul {
 .logo-footer {
   font-family: 'Josefin Slab', serif;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 1.563em; /* 25px */
 }
+
+/* ACESSIBILIDADE */
+#acessibilidade-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#acessibilidade-menu button {
+  width: 32px;
+  height: 32px;
+  padding: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#acessibilidade-menu button img {
+  width: 24px;
+  height: 24px;
+}
+
+.alto-contraste {
+  background-color: black !important;
+  color: yellow !important;
+}
+
+.alto-contraste img,
+.alto-contraste svg,
+.alto-contraste [src*=".svg"],
+.alto-contraste [src*=".png"],
+.alto-contraste [src*=".jpg"],
+.alto-contraste [src*=".jpeg"],
+.alto-contraste [src*=".webp"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
